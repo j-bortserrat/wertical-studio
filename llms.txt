@@ -1,0 +1,36 @@
+# Wertical Studio
+
+> Estudio de diseño y desarrollo web a medida en Valencia (España). Creamos webs para pequeños negocios locales — sobre todo restauración, comercio y servicios — con un trato cercano y personal, diseño propio y código a medida (no plantillas genéricas).
+
+## Servicios
+
+- **Diseño a medida** — identidad visual y experiencia de usuario adaptadas a cada negocio.
+- **Desarrollo propio** — código limpio, rápido y responsive, optimizado para móvil, SEO y rendimiento real.
+- **Mantenimiento** — publicación y gestión del dominio, cambios de contenido, actualizaciones técnicas, copias de seguridad, informes de tráfico.
+- **Consultoría digital** — SEO, conversión y estrategia de presencia online.
+
+Detalle de servicios: https://werticalstudio.com/servicios.html
+
+## Proyectos publicados
+
+Todos son webs reales en producción, no maquetas:
+
+- Som Tribu — escuela de baile en Paiporta — https://somtribupaiporta.com
+- Bora Bora Açaí — açaí bowls y tostas en Valencia — https://boraboracai.es
+- Restaurante Chino Alfafar — cocina china tradicional — https://restaurantechinoalfafar.com
+- Café del Mar — cafetería en el Cabanyal, Valencia — https://cafedelmarcabanyal.com
+- Restaurante Arantxa — restaurante en l'Eixample de Valencia — https://restaurantearantxa.com
+
+Portfolio completo: https://werticalstudio.com/trabajos.html
+
+## Ubicación y contacto
+
+- Con base en Valencia, España. Trabajo en remoto con clientes de toda España.
+- Email: contact@werticalstudio.com
+- Formulario de contacto / briefing de proyecto: https://werticalstudio.com/briefing.html
+
+## Notas para agentes de IA
+
+- Todo el contenido de este sitio es información real de un negocio en activo — no hay datos de prueba ni placeholders.
+- No hay precios publicados en el sitio; el coste de cada proyecto depende del alcance y se da por presupuesto a medida tras el contacto inicial.
+- Páginas excluidas de indexación (ver robots.txt): /briefing.html, /kit-digital.html, /gracias.html, /firma-gmail.html — son páginas funcionales (formularios, agradecimientos), no contenido informativo.

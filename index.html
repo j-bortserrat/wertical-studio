@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Wertical Studio · Diseño web en Valencia</title>
-<meta name="description" content="Wertical Studio · Diseño y desarrollo web en Valencia. Webs que elevan tu negocio. Contacto presencial · desarrollo en remoto." />
+<title>Wertical Studio · Diseño y desarrollo web a medida en Valencia</title>
+<meta name="description" content="Diseño y desarrollo web a medida en Valencia. Creamos webs que elevan tu negocio: identidad, código propio y mantenimiento, con trato cercano y personal." />
 <link rel="canonical" href="https://werticalstudio.com/" />
 <meta name="theme-color" content="#fafaf7" />
 <meta name="author" content="Wertical Studio" />
@@ -20,7 +20,7 @@
 <meta property="og:title" content="Wertical Studio · Diseño y desarrollo web en Valencia" />
 <meta property="og:description" content="Webs que elevan tu negocio. Diseño y desarrollo a medida, con un trato cercano y personal." />
 <meta property="og:url" content="https://werticalstudio.com/" />
-<meta property="og:image" content="https://werticalstudio.com/assets/og-image.svg" />
+<meta property="og:image" content="https://werticalstudio.com/assets/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Wertical Studio · Webs que elevan tu negocio" />
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Wertical Studio · Diseño y desarrollo web en Valencia" />
 <meta name="twitter:description" content="Webs que elevan tu negocio. Diseño y desarrollo a medida, con un trato cercano y personal." />
-<meta name="twitter:image" content="https://werticalstudio.com/assets/og-image.svg" />
+<meta name="twitter:image" content="https://werticalstudio.com/assets/og-image.jpg" />
 
 <!-- Schema.org LocalBusiness -->
 <script type="application/ld+json">
@@ -41,7 +41,7 @@
   "url": "https://werticalstudio.com",
   "email": "contact@werticalstudio.com",
   "telephone": ["+34651413489", "+34659463296"],
-  "image": "https://werticalstudio.com/assets/og-image.svg",
+  "image": "https://werticalstudio.com/assets/og-image.jpg",
   "logo": "https://werticalstudio.com/assets/favicon.svg",
   "areaServed": {
     "@type": "Place",
@@ -62,8 +62,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg: #fafaf7;
-    --bg-alt: #f1efe8;
+    --bg: #fbeae6;
+    --bg-alt: #eeeeee;
     --ink: #2d1b4e;
     --ink-soft: #4a3a6b;
     --ink-light: #564a72;
@@ -123,11 +123,15 @@
     backdrop-filter: blur(0px);
   }
   .nav.scrolled {
-    background: rgba(250, 250, 247, 0.85);
+    background: rgba(251, 234, 230, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
     padding: 14px 40px;
   }
+  .nav:not(.scrolled) { color: #fff; }
+  .nav:not(.scrolled) .nav-cta { border-color: rgba(255, 255, 255, 0.6); }
+  .nav:not(.scrolled) .nav-cta:hover { background: var(--bg); color: var(--ink); }
+  .nav:not(.scrolled) .nav-toggle { color: #fff; }
   .nav-logo {
     font-family: var(--serif);
     font-weight: 500;
@@ -196,109 +200,103 @@
 
   /* ─── HERO ────────────────────────────── */
   .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 140px 40px 80px;
+    height: 100vh;
     position: relative;
+    background: #0c0912;
     overflow: hidden;
   }
-  .hero-container {
-    max-width: var(--max);
-    margin: 0 auto;
-    width: 100%;
-    position: relative;
-    z-index: 2;
+  .hero-frame {
+    position: absolute;
+    inset: 0;
   }
+  .hero-frame video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.5) brightness(0.75);
+  }
+  .hero-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(10, 8, 16, 0.35) 0%, rgba(10, 8, 16, 0.75) 85%);
+    pointer-events: none;
+  }
+  .hero-frame-content {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    bottom: 108px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 24px 0;
+  }
+  .hero-frame-logo {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(15px, 1.6vw, 19px);
+    color: #fff;
+    letter-spacing: -0.3px;
+    margin-bottom: 20px;
+  }
+  .hero-frame-logo span { color: var(--coral); }
   .hero-marker {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    font-size: 13px;
-    letter-spacing: 0.15em;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--ink-light);
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 500;
-    margin-bottom: 36px;
+    margin-bottom: 22px;
   }
   .hero-marker::before {
     content: "";
-    width: 36px; height: 1px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
     background: var(--coral);
   }
   .hero-title {
     font-family: var(--serif);
-    font-size: clamp(54px, 9vw, 140px);
-    line-height: 0.95;
+    font-size: clamp(34px, 5.5vw, 76px);
+    line-height: 1.05;
     font-weight: 400;
-    letter-spacing: -0.03em;
-    margin: 0 0 40px;
-    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: #fff;
   }
   .hero-title em {
     font-style: italic;
     font-weight: 300;
     color: var(--coral);
-    position: relative;
-    display: inline-block;
-  }
-  .hero-title em::after {
-    content: "";
-    position: absolute;
-    left: 0; bottom: 8%;
-    width: 100%; height: 2px;
-    background: var(--coral);
-    opacity: 0.3;
   }
   .hero-bottom {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
-    align-items: end;
-    margin-top: 80px;
-  }
-  .hero-lead {
-    font-size: clamp(17px, 1.4vw, 21px);
-    line-height: 1.55;
-    color: var(--ink-soft);
-    max-width: 540px;
-    font-weight: 400;
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    padding: 20px 32px 32px;
+    display: flex;
+    justify-content: center;
   }
   .hero-meta {
-    text-align: right;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ink-light);
-    line-height: 2;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.9;
+    text-align: center;
   }
   .hero-meta strong {
-    color: var(--ink);
+    color: #fff;
     font-weight: 600;
-  }
-  .hero-decoration {
-    position: absolute;
-    top: 20%; right: -100px;
-    width: 380px; height: 380px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, var(--coral), transparent 70%);
-    opacity: 0.15;
-    filter: blur(40px);
-    z-index: 1;
-  }
-  .hero-circle {
-    position: absolute;
-    top: 30%; right: 8%;
-    width: 280px; height: 280px;
-    border: 1px solid var(--ink);
-    border-radius: 50%;
-    opacity: 0.08;
-    z-index: 1;
-  }
-  .hero-circle.outer {
-    width: 420px; height: 420px;
-    top: 22%; right: -2%;
-    opacity: 0.05;
   }
   .scroll-hint {
     position: absolute;
@@ -307,16 +305,17 @@
     font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--ink-light);
+    color: rgba(255, 255, 255, 0.4);
     writing-mode: vertical-rl;
     display: flex;
     align-items: center;
     gap: 10px;
+    z-index: 2;
   }
   .scroll-hint::after {
     content: "";
     width: 1px; height: 40px;
-    background: var(--ink-light);
+    background: rgba(255, 255, 255, 0.4);
     animation: scrollLine 2s ease-in-out infinite;
   }
   @keyframes scrollLine {
@@ -324,11 +323,10 @@
     50% { transform: scaleY(1.5); opacity: 1; }
   }
   @media (max-width: 768px){
-    .hero { padding: 110px 22px 60px; }
-    .hero-bottom { grid-template-columns: 1fr; gap: 30px; margin-top: 50px; }
-    .hero-meta { text-align: left; }
+    .hero { height: 100svh; }
+    .hero-frame-content { bottom: 110px; padding-top: 90px; }
+    .hero-bottom { padding: 20px 24px 84px; }
     .scroll-hint { display: none; }
-    .hero-circle, .hero-circle.outer { display: none; }
   }
 
   /* ─── SOBRE / FILOSOFÍA ───────────────── */
@@ -532,14 +530,25 @@
   /* ─── SERVICIOS ───────────────────────── */
   .services {
     background: var(--bg-alt);
+    padding-top: 50px;
+    padding-bottom: 44px;
+  }
+  .services .section-opener { margin-bottom: 26px; }
+  .services .section-title { margin-bottom: 14px; }
+  .services-intro-text {
+    max-width: 560px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0;
   }
   .services-list {
-    margin-top: 60px;
+    margin-top: 24px;
     border-top: 1px solid var(--line);
   }
   .service-item {
     border-bottom: 1px solid var(--line);
-    padding: 50px 0;
+    padding: 20px 0;
     display: grid;
     grid-template-columns: 220px 1.1fr 1.4fr;
     gap: 50px;
@@ -563,6 +572,7 @@
     font-weight: 400;
     letter-spacing: -0.02em;
     line-height: 1;
+    margin: 0;
     transition: color 0.4s;
   }
   .service-desc {
@@ -589,43 +599,44 @@
 
   /* ─── PORTFOLIO ───────────────────────── */
   .portfolio { padding-bottom: 80px; }
-  .portfolio-intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 70px;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-  .portfolio-intro .section-title { margin-bottom: 0; }
+  .portfolio .section-title { margin-bottom: 14px; }
   .portfolio-intro-text {
-    max-width: 380px;
+    max-width: 560px;
     font-size: 16px;
     color: var(--ink-soft);
-    line-height: 1.65;
+    line-height: 1.6;
+    margin: 0 0 44px;
   }
+  .projects-wrap { position: relative; }
   .projects {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    gap: 44px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 4px;
+    padding: 4px 4px 36px;
+    margin: 0 -4px -20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
   }
+  .projects::-webkit-scrollbar { height: 5px; }
+  .projects::-webkit-scrollbar-thumb { background: var(--line); border-radius: 100px; }
+  .projects::-webkit-scrollbar-track { background: transparent; }
   .project {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
-    align-items: center;
-    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: min(580px, 58vw);
+    scroll-snap-align: start;
     position: relative;
   }
-  .project:nth-child(even) {
-    grid-template-columns: 1.2fr 1fr;
-  }
-  .project:nth-child(even) .project-info { order: 2; }
   .project-visual {
     aspect-ratio: 4 / 3;
-    border-radius: 4px;
+    border-radius: 26px;
     overflow: hidden;
     position: relative;
+    margin-bottom: 32px;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow:
       0 1px 2px rgba(45, 27, 78, 0.06),
@@ -648,7 +659,8 @@
     transition: opacity 0.5s ease;
   }
   .project:hover .project-visual::after { opacity: 1; }
-  .project-visual img {
+  .project-visual img,
+  .project-visual video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -656,19 +668,33 @@
     display: block;
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .project:hover .project-visual img {
+  .project:hover .project-visual img,
+  .project:hover .project-visual video {
     transform: scale(1.04);
   }
-  .project-visual::before {
-    content: "";
+  .projects-nav {
     position: absolute;
-    top: 14px; left: 14px;
-    width: 10px; height: 10px;
+    top: calc(50% - 18px);
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: var(--coral);
-    box-shadow: 16px 0 0 #ffd166, 32px 0 0 #06aed5;
-    z-index: 3;
-    opacity: 0.85;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(45, 27, 78, 0.1);
+  }
+  .projects-nav:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .projects-nav svg { width: 18px; height: 18px; }
+  .projects-nav-prev { left: -22px; }
+  .projects-nav-next { right: -22px; }
+  @media (max-width: 880px){
+    .projects-nav { display: none; }
   }
 
   .project-num {
@@ -682,7 +708,7 @@
   }
   .project-title {
     font-family: var(--serif);
-    font-size: clamp(34px, 4vw, 54px);
+    font-size: clamp(36px, 4.6vw, 62px);
     font-weight: 400;
     line-height: 1.05;
     letter-spacing: -0.02em;
@@ -770,9 +796,7 @@
     transform: translate(4px, -4px);
   }
   @media (max-width: 880px){
-    .project, .project:nth-child(even) { grid-template-columns: 1fr; gap: 30px; }
-    .project .project-visual { order: 1; }
-    .project .project-info, .project:nth-child(even) .project-info { order: 2; }
+    .project { width: 84vw; }
   }
 
   /* ─── PROCESO ─────────────────────────── */
@@ -1105,16 +1129,6 @@
     .nav, .nav.scrolled { padding: 12px 18px; }
     .nav-logo { font-size: 16px; }
 
-    /* Hero */
-    .hero { padding: 84px 20px 40px; min-height: auto; }
-    .hero-marker { margin-bottom: 20px; font-size: 10px; letter-spacing: 0.12em; }
-    .hero-marker::before { width: 20px; }
-    .hero-title { font-size: clamp(38px, 10vw, 56px); margin-bottom: 24px; line-height: 1; }
-    .hero-bottom { margin-top: 26px; gap: 20px; }
-    .hero-lead { font-size: 15px; line-height: 1.5; }
-    .hero-meta { font-size: 11px; }
-    .hero-meta div { line-height: 1.8; }
-
     /* Sections */
     .section { padding: 56px 20px; }
     .section-label { font-size: 10px; margin-bottom: 16px; letter-spacing: 0.16em; }
@@ -1126,6 +1140,7 @@
     .section-opener span { font-size: 16px; padding: 0 12px; }
 
     /* Services */
+    .services-intro-text { font-size: 14px; }
     .service-item {
       padding: 24px 0;
       gap: 6px;
@@ -1136,10 +1151,10 @@
     .service-item:hover { padding-left: 0; }
 
     /* Portfolio */
-    .portfolio-intro { margin-bottom: 32px; gap: 18px; }
-    .portfolio-intro-text { font-size: 14px; }
-    .projects { gap: 8px; }
-    .project, .project:nth-child(even) { padding: 12px 0; gap: 18px; }
+    .portfolio-intro-text { font-size: 14px; margin-bottom: 28px; }
+    .projects { gap: 20px; }
+    .project { width: 88vw; }
+    .project-visual { margin-bottom: 18px; }
     .project-title { font-size: clamp(24px, 6.5vw, 34px); line-height: 1.05; }
     .project-num { font-size: 12px; margin-bottom: 10px; }
     .project-desc { font-size: 14px; margin-bottom: 18px; line-height: 1.55; }
@@ -1204,26 +1219,23 @@
 
 <!-- ─── HERO ─────────────────────────────────────── -->
 <header class="hero" id="top">
-  <div class="hero-decoration"></div>
-  <div class="hero-circle outer"></div>
-  <div class="hero-circle"></div>
-  <div class="hero-container">
-    <div class="hero-marker reveal">Diseño y desarrollo web · Valencia</div>
-    <h1 class="hero-title reveal">
-      Webs que<br />
-      <em>elevan</em><br />
-      tu negocio.
-    </h1>
-    <div class="hero-bottom reveal">
-      <p class="hero-lead">
-        Cada negocio tiene una historia — nosotros la llevamos online.
-        Transformamos ideas en páginas web a medida que hacen crecer tu negocio,
-        con un trato cercano y personal. Cuéntanos la tuya.
-      </p>
-      <div class="hero-meta">
-        <div><strong>Valencia</strong></div>
-        <div>Trabajamos en remoto, estamos a tu lado</div>
-      </div>
+  <div class="hero-frame reveal">
+    <video autoplay muted loop playsinline preload="auto" poster="assets/video/hero-code-poster.jpg">
+      <source src="assets/video/hero-code.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-frame-content">
+      <div class="hero-frame-logo">Wertical<span>·</span>Studio</div>
+      <div class="hero-marker">Diseño y desarrollo web · Valencia</div>
+      <h1 class="hero-title">
+        Webs que <em>elevan</em><br />
+        tu negocio.
+      </h1>
+    </div>
+  </div>
+  <div class="hero-bottom reveal">
+    <div class="hero-meta">
+      <div><strong>Valencia</strong></div>
+      <div>Trabajamos en remoto, estamos a tu lado</div>
     </div>
   </div>
 </header>
@@ -1269,25 +1281,30 @@
       Cuatro disciplinas,<br />
       una sola <em>obsesión</em>.
     </h2>
+    <p class="services-intro-text reveal">
+      Cada negocio tiene una historia — nosotros la llevamos online. Transformamos
+      ideas en páginas web a medida que hacen crecer tu negocio, con un trato
+      cercano y personal. Cuéntanos la tuya.
+    </p>
 
     <div class="services-list">
       <div class="service-item reveal">
         <div class="service-num">01 — Diseño</div>
-        <div class="service-name">Diseño a medida</div>
+        <h3 class="service-name">Diseño a medida</h3>
         <div class="service-desc">
           Identidad visual y experiencia de usuario adaptadas a tu sector y tipo de cliente.
         </div>
       </div>
       <div class="service-item reveal">
         <div class="service-num">02 — Desarrollo</div>
-        <div class="service-name">Desarrollo propio</div>
+        <h3 class="service-name">Desarrollo propio</h3>
         <div class="service-desc">
           Código limpio, rápido y responsive. Optimizado para móvil, SEO y rendimiento real.
         </div>
       </div>
       <div class="service-item reveal">
         <div class="service-num">03 — Mantenimiento</div>
-        <div class="service-name">Mantenimiento</div>
+        <h3 class="service-name">Mantenimiento</h3>
         <div class="service-desc">
           Publicación, gestión y renovación del dominio. Cambios de contenido,
           actualizaciones técnicas y copias de seguridad. Supervisión del funcionamiento
@@ -1296,7 +1313,7 @@
       </div>
       <div class="service-item reveal">
         <div class="service-num">04 — Consultoría</div>
-        <div class="service-name">Consultoría digital</div>
+        <h3 class="service-name">Consultoría digital</h3>
         <div class="service-desc">
           Asesoramos en presencia online, SEO, conversión y estrategia para que tu web rinda más.
         </div>
@@ -1309,28 +1326,86 @@
 <section class="section portfolio" id="trabajos">
   <div class="section-opener" aria-hidden="true"><span>·</span></div>
   <div class="section-inner">
-    <div class="section-label reveal" data-num="02">— Trabajos seleccionados</div>
-    <div class="portfolio-intro">
-      <h2 class="section-title reveal">
-        Tres proyectos,<br />
-        tres <em>historias</em>.
-      </h2>
-      <p class="portfolio-intro-text reveal">
-        Cada cliente trae un universo distinto. Estos son tres ejemplos recientes — pulsa
-        sobre cada uno para verlo en vivo.
-      </p>
-    </div>
+    <div class="section-label reveal" data-num="02">— Proyectos</div>
+    <h2 class="section-title reveal">
+      Cada negocio tiene su historia,<br />
+      nosotros la llevamos <em>online</em>.
+    </h2>
+    <p class="portfolio-intro-text reveal">
+      Transformamos ideas en páginas web a medida que hacen crecer tu negocio, con un
+      trato cercano y personal.
+    </p>
 
-    <div class="projects">
+    <div class="projects-wrap">
+    <button class="projects-nav projects-nav-prev" id="projectsPrev" aria-label="Proyecto anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 6 9 12 15 18"></polyline></svg>
+    </button>
+    <button class="projects-nav projects-nav-next" id="projectsNext" aria-label="Proyecto siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"></polyline></svg>
+    </button>
+    <div class="projects" id="projectsScroll">
 
-      <!-- Project 01: Café del Mar — Cabanyal -->
+      <!-- Project 01: Bora Bora Açaí -->
       <article class="project reveal">
-        <a href="https://cafedelmarcabanyal.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Café del Mar — Cabanyal">
-          <img src="assets/portfolio/cafedelmarcabanyal.jpg" alt="Vista previa de cafedelmarcabanyal.com" loading="lazy" width="1400" height="1050" />
+        <a href="https://boraboracai.es" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Bora Bora Açaí">
+          <video autoplay muted loop playsinline preload="none" poster="assets/portfolio/boraboracai.jpg" aria-label="Web de Bora Bora Açaí, açaí bowls y tostas en Valencia">
+            <source src="assets/portfolio/boraboracai-hero.mp4" type="video/mp4" />
+          </video>
         </a>
         <div class="project-info">
-          <span class="project-num">— Trabajo nº 01</span>
-          <h3 class="project-title">Café del Mar — Cabanyal</h3>
+          <h3 class="project-title">Bora Bora · Açaí</h3>
+          <p class="project-desc">
+            Açaí bowls, tostas y matchas en pleno centro de Valencia. Estética playera
+            y relajada, con carta y reseñas visibles desde el primer scroll.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Restauración</span>
+            <span class="project-tag project-tag-status">● En vivo</span>
+          </div>
+          <a href="https://boraboracai.es" target="_blank" rel="noopener" class="project-link">
+            Ver proyecto en vivo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 02: Som Tribu — Escuela de baile Paiporta -->
+      <article class="project reveal">
+        <a href="https://somtribupaiporta.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Som Tribu">
+          <video autoplay muted loop playsinline preload="none" poster="assets/portfolio/somtribupaiporta.jpg" aria-label="Web de Som Tribu, escuela de baile en Paiporta">
+            <source src="assets/portfolio/somtribupaiporta-hero.mp4" type="video/mp4" />
+          </video>
+        </a>
+        <div class="project-info">
+          <h3 class="project-title">Som Tribu · Escuela de baile</h3>
+          <p class="project-desc">
+            Web para escuela de baile en Paiporta. Nueve disciplinas, reserva de plaza
+            online y una estética urbana pensada para transmitir ambiente y energía.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Ocio y deporte</span>
+            <span class="project-tag project-tag-status">● En vivo</span>
+          </div>
+          <a href="https://somtribupaiporta.com" target="_blank" rel="noopener" class="project-link">
+            Ver proyecto en vivo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 03: Café del Mar — Cabanyal -->
+      <article class="project reveal">
+        <a href="https://cafedelmarcabanyal.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Café del Mar — Cabanyal">
+          <img src="assets/portfolio/cafedelmarcabanyal.jpg" alt="Web de Café del Mar, cafetería en el Cabanyal (Valencia)" loading="lazy" width="1400" height="1050" />
+        </a>
+        <div class="project-info">
+          <h3 class="project-title">Café del Mar · Cafetería</h3>
           <p class="project-desc">
             Web para cafetería a pie de playa. Atmósfera mediterránea, carta visible,
             reservas y ubicación. Pensada para que el visitante llegue, mire y reserve.
@@ -1349,52 +1424,57 @@
         </div>
       </article>
 
-      <!-- Project 02: Huevos de Colores -->
+      <!-- Project 04: Restaurante Arantxa -->
       <article class="project reveal">
+        <a href="https://restaurantearantxa.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Restaurante Arantxa">
+          <img src="assets/portfolio/restaurantearantxa.jpg" alt="Web de Restaurante Arantxa, en l'Eixample de Valencia" loading="lazy" width="1400" height="1050" />
+        </a>
         <div class="project-info">
-          <span class="project-num">— Trabajo nº 02</span>
-          <h3 class="project-title">Huevos de Colores</h3>
+          <h3 class="project-title">Arantxa · Restaurante</h3>
           <p class="project-desc">
-            Web informativa sobre ganadería. Tono fresco, paleta vibrante y narrativa
-            cercana al producto.
+            Web para restaurante en el corazón de l'Eixample de València. Producto fresco,
+            carta y reservas, con una estética cálida y cercana.
           </p>
           <div class="project-tags">
-            <span class="project-tag">Branding digital</span>
-            <span class="project-tag project-tag-dev">◐ En desarrollo</span>
+            <span class="project-tag">Restauración</span>
+            <span class="project-tag project-tag-status">● En vivo</span>
           </div>
-          <a href="https://huevosdecolores.com" target="_blank" rel="noopener" class="project-link">
-            Ver avance
+          <a href="https://restaurantearantxa.com" target="_blank" rel="noopener" class="project-link">
+            Ver proyecto en vivo
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
           </a>
         </div>
-        <a href="https://huevosdecolores.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Huevos de Colores">
-          <img src="assets/portfolio/huevosdecolores.jpg" alt="Vista previa de huevosdecolores.com" loading="lazy" width="1000" height="875" />
-        </a>
       </article>
 
-      <!-- Project 03: Cestometro -->
+      <!-- Project 05: Restaurante Chino Alfafar -->
       <article class="project reveal">
-        <a href="https://cestometro.com" target="_blank" rel="noopener" class="project-visual" aria-label="Avance de Cestometro">
-          <img src="assets/portfolio/cestometro.jpg" alt="Avance de cestometro.com" loading="lazy" width="1400" height="1050" />
+        <a href="https://restaurantechinoalfafar.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Restaurante Chino Alfafar">
+          <img src="assets/portfolio/restaurantechinoalfafar.jpg" alt="Web de Restaurante Chino Alfafar, cocina china tradicional" loading="lazy" width="1400" height="1050" />
         </a>
         <div class="project-info">
-          <span class="project-num">— Trabajo nº 03 · próximamente</span>
-          <h3 class="project-title">Cestometro</h3>
+          <h3 class="project-title">Chino Alfafar · Restaurante</h3>
           <p class="project-desc">
-            Proyecto actualmente en desarrollo. Diseño limpio y enfoque comercial, con
-            estructura orientada a que el cliente entienda el servicio en segundos.
+            Cocina china tradicional en Alfafar. Identidad visual con carácter, carta y
+            galería, pensada para transmitir autenticidad desde el primer scroll.
           </p>
           <div class="project-tags">
-            <span class="project-tag">Proyecto a medida</span>
-            <span class="project-tag project-tag-dev">◐ En desarrollo</span>
+            <span class="project-tag">Restauración</span>
+            <span class="project-tag project-tag-status">● En vivo</span>
           </div>
-          <span class="project-link project-link-soon">Próximamente</span>
+          <a href="https://restaurantechinoalfafar.com" target="_blank" rel="noopener" class="project-link">
+            Ver proyecto en vivo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
         </div>
       </article>
 
+    </div>
     </div>
   </div>
 </section>
@@ -1449,13 +1529,9 @@
   <div class="footer-inner">
     <div class="footer-logo">Wertical<span>·</span>Studio</div>
     <nav class="footer-legal" aria-label="Información legal">
-      <a href="aviso-legal.html">Aviso legal</a>
-      <span aria-hidden="true">·</span>
-      <a href="privacidad.html">Privacidad</a>
-      <span aria-hidden="true">·</span>
       <a href="cookies.html">Cookies</a>
     </nav>
-    <div class="footer-copy">© <span id="year"></span> · werticalstudio.com · Hecho con cuidado en Valencia</div>
+    <div class="footer-copy">© <span id="year"></span> Wertical Studio · Derechos reservados · Desarrollado por Wertical Studio</div>
   </div>
 </footer>
 
@@ -1544,6 +1620,52 @@
       parallaxTick = true;
     }
   }, { passive: true });
+
+  // Portfolio horizontal scroll nav
+  const projectsScroll = document.getElementById('projectsScroll');
+  const projectsPrev = document.getElementById('projectsPrev');
+  const projectsNext = document.getElementById('projectsNext');
+  if (projectsScroll && projectsPrev && projectsNext) {
+    const scrollByCard = (dir) => {
+      const card = projectsScroll.querySelector('.project');
+      const gap = 44;
+      const amount = card ? card.getBoundingClientRect().width + gap : 400;
+      projectsScroll.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    };
+    projectsPrev.addEventListener('click', () => scrollByCard(-1));
+    projectsNext.addEventListener('click', () => scrollByCard(1));
+    const positionNavArrows = () => {
+      const visual = projectsScroll.querySelector('.project-visual');
+      const wrap = projectsScroll.closest('.projects-wrap');
+      if (!visual || !wrap) return;
+      const visualRect = visual.getBoundingClientRect();
+      const wrapRect = wrap.getBoundingClientRect();
+      const centerY = visualRect.top - wrapRect.top + visualRect.height / 2;
+      projectsPrev.style.top = `${centerY - 22}px`;
+      projectsNext.style.top = `${centerY - 22}px`;
+    };
+    const updateNavState = () => {
+      const max = projectsScroll.scrollWidth - projectsScroll.clientWidth - 4;
+      const atStart = projectsScroll.scrollLeft <= 4;
+      const atEnd = projectsScroll.scrollLeft >= max;
+      projectsPrev.style.opacity = atStart ? '0.35' : '1';
+      projectsPrev.style.pointerEvents = atStart ? 'none' : 'auto';
+      projectsNext.style.opacity = atEnd ? '0.35' : '1';
+      projectsNext.style.pointerEvents = atEnd ? 'none' : 'auto';
+      const fadeL = atStart ? '0px' : '28px';
+      const fadeR = atEnd ? '0px' : '28px';
+      const mask = `linear-gradient(90deg, transparent 0, #000 ${fadeL}, #000 calc(100% - ${fadeR}), transparent 100%)`;
+      projectsScroll.style.maskImage = mask;
+      projectsScroll.style.webkitMaskImage = mask;
+    };
+    projectsScroll.addEventListener('scroll', updateNavState, { passive: true });
+    window.addEventListener('resize', () => { updateNavState(); positionNavArrows(); });
+    updateNavState();
+    positionNavArrows();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(positionNavArrows);
+    }
+  }
 </script>
 
 </body>

@@ -367,9 +367,6 @@
     color: var(--coral);
     font-weight: 500;
     min-height: 18px;
-    line-height: 1.6;
-    text-align: left;
-    display: inline-block;
   }
 
   @media (max-width: 768px){
@@ -434,11 +431,14 @@
 </section>
 
 <div class="form-wrap">
-  <form action="https://formsubmit.co/contact@werticalstudio.com" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
+  <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
 
-    <!-- Config -->
-    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-    <input type="hidden" name="_subject" value="Nuevo briefing · Wertical Studio" />
+    <!-- Web3Forms config -->
+    <input type="hidden" name="access_key" value="df982b89-f43a-4bab-b0f4-c7c749defbe8" />
+    <input type="hidden" name="subject" value="Nuevo briefing · Wertical Studio" />
+    <input type="hidden" name="from_name" value="Briefing · Wertical Studio" />
+    <input type="hidden" name="redirect" value="https://werticalstudio.com/gracias.html" />
+    <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off" style="display:none" />
 
     <!-- ─── 01 · Tú ─────────────────────────────── -->
     <details class="form-section" name="briefing" open>
@@ -456,8 +456,8 @@
 
       <div class="field-row">
         <div class="field">
-          <label for="nombre">Nombre completo <span class="opt">(opcional)</span></label>
-          <input type="text" id="nombre" name="Nombre" placeholder="María García" />
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="Nombre" required placeholder="María García" />
         </div>
         <div class="field">
           <label for="empresa">Empresa o nombre del negocio <span class="opt">(opcional)</span></label>
@@ -467,8 +467,8 @@
 
       <div class="field-row">
         <div class="field">
-          <label for="email">Email <span class="opt">(opcional)</span></label>
-          <input type="email" id="email" name="Email" placeholder="hola@ejemplo.com" />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required placeholder="hola@ejemplo.com" />
         </div>
         <div class="field">
           <label for="tel">Teléfono <span class="opt">(opcional)</span></label>
@@ -503,8 +503,8 @@
       <p class="form-section-desc">Esto nos ayuda a entender qué necesita realmente tu web.</p>
 
       <div class="field">
-        <label for="sector">Sector o tipo de negocio <span class="opt">(opcional)</span></label>
-        <input type="text" id="sector" name="Sector" placeholder="Restaurante, clínica, comercio, freelance, etc." />
+        <label for="sector">Sector o tipo de negocio</label>
+        <input type="text" id="sector" name="Sector" required placeholder="Restaurante, clínica, comercio, freelance, etc." />
       </div>
 
       <div class="field">
@@ -628,7 +628,7 @@
 
     <!-- ─── Submit ──────────────────────────────── -->
     <div class="consent">
-      <input type="checkbox" id="consent" />
+      <input type="checkbox" id="consent" required />
       <label for="consent" style="font-size:13px; letter-spacing:0; text-transform:none; font-weight:400; color:var(--ink-soft); margin:0;">
         He leído y acepto la <a href="privacidad.html" target="_blank">política de privacidad</a>. Mis datos serán usados solo para responder a esta consulta.
       </label>
@@ -648,33 +648,30 @@
 </div>
 
 <script>
-  // Mostrar nombres de TODOS los archivos seleccionados
+  // File names display
   const fileInput = document.getElementById('archivos');
   const fileNames = document.getElementById('fileNames');
   if (fileInput && fileNames) {
     fileInput.addEventListener('change', () => {
       const files = Array.from(fileInput.files || []);
-      if (!files.length) { fileNames.innerHTML = ''; return; }
-      fileNames.innerHTML = files.map(f => `✓ ${f.name}`).join('<br>');
+      if (!files.length) { fileNames.textContent = ''; return; }
+      fileNames.textContent = files.length === 1
+        ? `✓ ${files[0].name}`
+        : `✓ ${files.length} archivos seleccionados`;
     });
   }
 
-  // Subject dinámico → un correo por envío (no se agrupan en el mismo hilo)
+  // Abrir todas las secciones si hay errores al validar
   const form = document.querySelector('form');
   if (form) {
-    form.addEventListener('submit', () => {
-      const nombre = (form.querySelector('input[name="Nombre"]')?.value || '').trim();
-      const subj = form.querySelector('input[name="_subject"]');
-      if (subj) {
-        const ts = new Date().toLocaleString('es-ES', {
-          day:'2-digit', month:'2-digit', year:'numeric',
-          hour:'2-digit', minute:'2-digit'
-        });
-        subj.value = nombre
-          ? `Nuevo briefing · ${nombre} · ${ts}`
-          : `Nuevo briefing · ${ts}`;
+    form.addEventListener('invalid', (e) => {
+      document.querySelectorAll('details.form-section').forEach(d => d.open = true);
+      // Scroll al primer campo inválido
+      const invalid = e.target;
+      if (invalid && typeof invalid.scrollIntoView === 'function') {
+        setTimeout(() => invalid.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
       }
-    });
+    }, true);
   }
 </script>
 

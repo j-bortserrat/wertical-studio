@@ -17,13 +17,13 @@
 <meta property="og:title" content="Trabajos · Wertical Studio" />
 <meta property="og:description" content="Proyectos seleccionados — webs a medida con un trato cercano y resultados reales." />
 <meta property="og:url" content="https://werticalstudio.com/trabajos.html" />
-<meta property="og:image" content="https://werticalstudio.com/assets/og-image.svg" />
+<meta property="og:image" content="https://werticalstudio.com/assets/og-image.jpg" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Trabajos · Wertical Studio" />
 <meta name="twitter:description" content="Proyectos seleccionados — webs a medida con un trato cercano y resultados reales." />
-<meta name="twitter:image" content="https://werticalstudio.com/assets/og-image.svg" />
+<meta name="twitter:image" content="https://werticalstudio.com/assets/og-image.jpg" />
 
 <!-- Schema.org -->
 <script type="application/ld+json">
@@ -46,10 +46,10 @@
         "position": 1,
         "item": {
           "@type": "CreativeWork",
-          "name": "Café del Mar — Cabanyal",
-          "url": "https://cafedelmarcabanyal.com",
-          "about": "Web para cafetería a pie de playa en Valencia",
-          "image": "https://werticalstudio.com/assets/portfolio/cafedelmarcabanyal.jpg"
+          "name": "Bora Bora · Açaí",
+          "url": "https://boraboracai.es",
+          "about": "Açaí bowls y tostas en pleno centro de Valencia",
+          "image": "https://werticalstudio.com/assets/portfolio/boraboracai.jpg"
         }
       },
       {
@@ -57,10 +57,10 @@
         "position": 2,
         "item": {
           "@type": "CreativeWork",
-          "name": "Huevos de Colores",
-          "url": "https://huevosdecolores.com",
-          "about": "Web informativa sobre ganadería con tono fresco y narrativa cercana",
-          "image": "https://werticalstudio.com/assets/portfolio/huevosdecolores.jpg"
+          "name": "Som Tribu · Escuela de baile",
+          "url": "https://somtribupaiporta.com",
+          "about": "Web para escuela de baile en Paiporta",
+          "image": "https://werticalstudio.com/assets/portfolio/somtribupaiporta.jpg"
         }
       },
       {
@@ -68,9 +68,32 @@
         "position": 3,
         "item": {
           "@type": "CreativeWork",
-          "name": "Cestometro",
-          "about": "Proyecto en desarrollo con enfoque comercial",
-          "image": "https://werticalstudio.com/assets/portfolio/cestometro.jpg"
+          "name": "Café del Mar · Cafetería",
+          "url": "https://cafedelmarcabanyal.com",
+          "about": "Web para cafetería a pie de playa en Valencia",
+          "image": "https://werticalstudio.com/assets/portfolio/cafedelmarcabanyal.jpg"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Arantxa · Restaurante",
+          "url": "https://restaurantearantxa.com",
+          "about": "Web para restaurante en el corazón de l'Eixample de València",
+          "image": "https://werticalstudio.com/assets/portfolio/restaurantearantxa.jpg"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "Chino Alfafar · Restaurante",
+          "url": "https://restaurantechinoalfafar.com",
+          "about": "Cocina china tradicional en Alfafar",
+          "image": "https://werticalstudio.com/assets/portfolio/restaurantechinoalfafar.jpg"
         }
       }
     ]
@@ -83,8 +106,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg: #fafaf7;
-    --bg-alt: #f1efe8;
+    --bg: #fbeae6;
+    --bg-alt: #eeeeee;
     --ink: #2d1b4e;
     --ink-soft: #4a3a6b;
     --ink-light: #564a72;
@@ -137,7 +160,7 @@
     backdrop-filter: blur(0px);
   }
   .nav.scrolled {
-    background: rgba(250, 250, 247, 0.85);
+    background: rgba(251, 234, 230, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
     padding: 14px 40px;
@@ -209,17 +232,32 @@
   .section { padding: 100px 40px; position: relative; z-index: 2; }
   .section-inner { max-width: var(--max); margin: 0 auto; }
 
-  .projects { display: flex; flex-direction: column; gap: 60px; }
-  .project {
-    display: grid; grid-template-columns: 1fr 1.2fr;
-    gap: 60px; align-items: center;
-    padding: 30px 0; position: relative;
+  .projects-wrap { position: relative; }
+  .projects {
+    display: flex; gap: 40px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 4px;
+    padding: 4px 4px 36px;
+    margin: 0 -4px -20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
   }
-  .project:nth-child(even) { grid-template-columns: 1.2fr 1fr; }
-  .project:nth-child(even) .project-info { order: 2; }
-  .project-visual {
-    aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden;
+  .projects::-webkit-scrollbar { height: 5px; }
+  .projects::-webkit-scrollbar-thumb { background: var(--line); border-radius: 100px; }
+  .projects::-webkit-scrollbar-track { background: transparent; }
+  .project {
+    display: flex; flex-direction: column;
+    flex: 0 0 auto;
+    width: min(480px, 80vw);
+    scroll-snap-align: start;
     position: relative;
+  }
+  .project-visual {
+    aspect-ratio: 4 / 3; border-radius: 26px; overflow: hidden;
+    position: relative;
+    margin-bottom: 32px;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 1px 2px rgba(45, 27, 78, 0.06), 0 8px 30px rgba(45, 27, 78, 0.08);
   }
@@ -234,19 +272,27 @@
     transition: opacity 0.5s ease;
   }
   .project:hover .project-visual::after { opacity: 1; }
-  .project-visual img {
+  .project-visual img,
+  .project-visual video {
     width: 100%; height: 100%; object-fit: cover;
     object-position: top center; display: block;
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .project:hover .project-visual img { transform: scale(1.04); }
-  .project-visual::before {
-    content: ""; position: absolute; top: 14px; left: 14px;
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--coral);
-    box-shadow: 16px 0 0 #ffd166, 32px 0 0 #06aed5;
-    z-index: 3; opacity: 0.85;
+  .project:hover .project-visual img,
+  .project:hover .project-visual video { transform: scale(1.04); }
+  .projects-nav {
+    position: absolute; top: calc(50% - 18px);
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 4; transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(45, 27, 78, 0.1);
   }
+  .projects-nav:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .projects-nav svg { width: 18px; height: 18px; }
+  .projects-nav-prev { left: -22px; }
+  .projects-nav-next { right: -22px; }
+  @media (max-width: 880px){ .projects-nav { display: none; } }
   .project-num {
     font-family: var(--serif); font-style: italic;
     font-size: 16px; color: var(--coral);
@@ -299,9 +345,7 @@
   }
   .project-link-soon::before { content: "◐"; color: var(--coral); font-size: 16px; }
   @media (max-width: 880px){
-    .project, .project:nth-child(even) { grid-template-columns: 1fr; gap: 30px; }
-    .project .project-visual { order: 1; }
-    .project .project-info, .project:nth-child(even) .project-info { order: 2; }
+    .project { width: 84vw; }
   }
 
   /* CTA */
@@ -408,11 +452,10 @@
   <div class="page-hero-decoration"></div>
   <div class="page-hero-inner">
     <div class="page-hero-marker reveal">Trabajos · Proyectos seleccionados</div>
-    <h1 class="page-hero-title reveal">Cada cliente trae<br /><em>un universo distinto</em>.</h1>
+    <h1 class="page-hero-title reveal">Cada negocio tiene su historia,<br />nosotros la llevamos <em>online</em>.</h1>
     <p class="page-hero-lead reveal">
-      Estas son algunas de las webs que hemos diseñado y desarrollado. Sectores
-      muy diferentes, retos muy diferentes — pero la misma filosofía: claridad,
-      ritmo y un cuidado obsesivo por el detalle.
+      Transformamos ideas en páginas web a medida que hacen crecer tu negocio, con un
+      trato cercano y personal.
     </p>
   </div>
 </header>
@@ -420,26 +463,82 @@
 <!-- PROYECTOS -->
 <section class="section">
   <div class="section-inner">
-    <div class="projects">
+    <div class="projects-wrap">
+    <button class="projects-nav projects-nav-prev" id="projectsPrev" aria-label="Proyecto anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 6 9 12 15 18"></polyline></svg>
+    </button>
+    <button class="projects-nav projects-nav-next" id="projectsNext" aria-label="Proyecto siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"></polyline></svg>
+    </button>
+    <div class="projects" id="projectsScroll">
 
-      <!-- 01 Café del Mar -->
+      <!-- 01 Bora Bora Açaí -->
       <article class="project reveal">
-        <a href="https://cafedelmarcabanyal.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Café del Mar — Cabanyal">
-          <img src="assets/portfolio/cafedelmarcabanyal.jpg" alt="Vista previa de cafedelmarcabanyal.com" loading="lazy" width="1400" height="1050" />
+        <a href="https://boraboracai.es" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Bora Bora Açaí">
+          <video autoplay muted loop playsinline preload="none" poster="assets/portfolio/boraboracai.jpg" aria-label="Web de Bora Bora Açaí, açaí bowls y tostas en Valencia">
+            <source src="assets/portfolio/boraboracai-hero.mp4" type="video/mp4" />
+          </video>
         </a>
         <div class="project-info">
-          <span class="project-num">— Trabajo nº 01</span>
-          <h2 class="project-title">Café del Mar — Cabanyal</h2>
+          <h2 class="project-title">Bora Bora · Açaí</h2>
+          <p class="project-desc">
+            Açaí bowls, tostas y matchas en pleno centro de Valencia. Estética
+            playera y relajada, con carta y reseñas visibles desde el primer scroll.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Restauración</span>
+            <span class="project-tag project-tag-status">● En vivo</span>
+          </div>
+          <a href="https://boraboracai.es" target="_blank" rel="noopener" class="project-link">
+            Ver proyecto en vivo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 02 Som Tribu -->
+      <article class="project reveal">
+        <a href="https://somtribupaiporta.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Som Tribu">
+          <video autoplay muted loop playsinline preload="none" poster="assets/portfolio/somtribupaiporta.jpg" aria-label="Web de Som Tribu, escuela de baile en Paiporta">
+            <source src="assets/portfolio/somtribupaiporta-hero.mp4" type="video/mp4" />
+          </video>
+        </a>
+        <div class="project-info">
+          <h2 class="project-title">Som Tribu · Escuela de baile</h2>
+          <p class="project-desc">
+            Web para escuela de baile en Paiporta. Nueve disciplinas, reserva de
+            plaza online y una estética urbana pensada para transmitir ambiente y
+            energía.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Ocio y deporte</span>
+            <span class="project-tag project-tag-status">● En vivo</span>
+          </div>
+          <a href="https://somtribupaiporta.com" target="_blank" rel="noopener" class="project-link">
+            Ver proyecto en vivo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 03 Café del Mar -->
+      <article class="project reveal">
+        <a href="https://cafedelmarcabanyal.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Café del Mar — Cabanyal">
+          <img src="assets/portfolio/cafedelmarcabanyal.jpg" alt="Web de Café del Mar, cafetería en el Cabanyal (Valencia)" loading="lazy" width="1400" height="1050" />
+        </a>
+        <div class="project-info">
+          <h2 class="project-title">Café del Mar · Cafetería</h2>
           <p class="project-desc">
             Web para cafetería a pie de playa. Atmósfera mediterránea, carta visible,
             reservas y ubicación. Pensada para que el visitante llegue, mire y reserve
             sin fricciones.
           </p>
-          <ul class="project-detail">
-            <li><span>Sector</span><span>Restauración</span></li>
-            <li><span>Tipo</span><span>Web informativa + reservas</span></li>
-            <li><span>Año</span><span>2025</span></li>
-          </ul>
           <div class="project-tags">
             <span class="project-tag">Restauración</span>
             <span class="project-tag project-tag-status">● En vivo</span>
@@ -454,63 +553,57 @@
         </div>
       </article>
 
-      <!-- 02 Huevos de Colores -->
+      <!-- 04 Arantxa -->
       <article class="project reveal">
+        <a href="https://restaurantearantxa.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Restaurante Arantxa">
+          <img src="assets/portfolio/restaurantearantxa.jpg" alt="Web de Restaurante Arantxa, en l'Eixample de Valencia" loading="lazy" width="1400" height="1050" />
+        </a>
         <div class="project-info">
-          <span class="project-num">— Trabajo nº 02</span>
-          <h2 class="project-title">Huevos de Colores</h2>
+          <h2 class="project-title">Arantxa · Restaurante</h2>
           <p class="project-desc">
-            Web informativa sobre ganadería. Tono fresco, paleta vibrante y narrativa
-            cercana al producto — para que el visitante entienda la filosofía detrás
-            de cada huevo.
+            Web para restaurante en el corazón de l'Eixample de València. Producto
+            fresco, carta y reservas, con una estética cálida y cercana.
           </p>
-          <ul class="project-detail">
-            <li><span>Sector</span><span>Ganadería · alimentación</span></li>
-            <li><span>Tipo</span><span>Branding digital</span></li>
-            <li><span>Año</span><span>2025</span></li>
-          </ul>
           <div class="project-tags">
-            <span class="project-tag">Branding digital</span>
-            <span class="project-tag project-tag-dev">◐ En desarrollo</span>
+            <span class="project-tag">Restauración</span>
+            <span class="project-tag project-tag-status">● En vivo</span>
           </div>
-          <a href="https://huevosdecolores.com" target="_blank" rel="noopener" class="project-link">
-            Ver avance
+          <a href="https://restaurantearantxa.com" target="_blank" rel="noopener" class="project-link">
+            Ver proyecto en vivo
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
           </a>
         </div>
-        <a href="https://huevosdecolores.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Huevos de Colores">
-          <img src="assets/portfolio/huevosdecolores.jpg" alt="Vista previa de huevosdecolores.com" loading="lazy" width="1000" height="875" />
-        </a>
       </article>
 
-      <!-- 03 Cestometro -->
+      <!-- 05 Restaurante Chino Alfafar -->
       <article class="project reveal">
-        <a href="https://cestometro.com" target="_blank" rel="noopener" class="project-visual" aria-label="Avance de Cestometro">
-          <img src="assets/portfolio/cestometro.jpg" alt="Avance de cestometro.com" loading="lazy" width="1400" height="1050" />
+        <a href="https://restaurantechinoalfafar.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Restaurante Chino Alfafar">
+          <img src="assets/portfolio/restaurantechinoalfafar.jpg" alt="Web de Restaurante Chino Alfafar, cocina china tradicional" loading="lazy" width="1400" height="1050" />
         </a>
         <div class="project-info">
-          <span class="project-num">— Trabajo nº 03 · próximamente</span>
-          <h2 class="project-title">Cestometro</h2>
+          <h2 class="project-title">Chino Alfafar · Restaurante</h2>
           <p class="project-desc">
-            Proyecto actualmente en desarrollo. Diseño limpio y enfoque comercial, con
-            estructura orientada a que el cliente entienda el servicio en segundos.
+            Cocina china tradicional en Alfafar. Identidad visual con carácter, carta
+            y galería, pensada para transmitir autenticidad desde el primer scroll.
           </p>
-          <ul class="project-detail">
-            <li><span>Sector</span><span>Servicios a medida</span></li>
-            <li><span>Tipo</span><span>Web producto</span></li>
-            <li><span>Año</span><span>2026</span></li>
-          </ul>
           <div class="project-tags">
-            <span class="project-tag">Proyecto a medida</span>
-            <span class="project-tag project-tag-dev">◐ En desarrollo</span>
+            <span class="project-tag">Restauración</span>
+            <span class="project-tag project-tag-status">● En vivo</span>
           </div>
-          <span class="project-link project-link-soon">Próximamente</span>
+          <a href="https://restaurantechinoalfafar.com" target="_blank" rel="noopener" class="project-link">
+            Ver proyecto en vivo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
         </div>
       </article>
 
+    </div>
     </div>
   </div>
 </section>
@@ -535,13 +628,9 @@
   <div class="footer-inner">
     <div class="footer-logo">Wertical<span>·</span>Studio</div>
     <nav class="footer-legal" aria-label="Información legal">
-      <a href="aviso-legal.html">Aviso legal</a>
-      <span aria-hidden="true">·</span>
-      <a href="privacidad.html">Privacidad</a>
-      <span aria-hidden="true">·</span>
       <a href="cookies.html">Cookies</a>
     </nav>
-    <div class="footer-copy">© <span id="year"></span> · werticalstudio.com</div>
+    <div class="footer-copy">© <span id="year"></span> Wertical Studio · Derechos reservados · Desarrollado por Wertical Studio</div>
   </div>
 </footer>
 
@@ -580,6 +669,52 @@
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
   reveals.forEach(el => io.observe(el));
+
+  // Portfolio horizontal scroll nav
+  const projectsScroll = document.getElementById('projectsScroll');
+  const projectsPrev = document.getElementById('projectsPrev');
+  const projectsNext = document.getElementById('projectsNext');
+  if (projectsScroll && projectsPrev && projectsNext) {
+    const scrollByCard = (dir) => {
+      const card = projectsScroll.querySelector('.project');
+      const gap = 40;
+      const amount = card ? card.getBoundingClientRect().width + gap : 400;
+      projectsScroll.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    };
+    projectsPrev.addEventListener('click', () => scrollByCard(-1));
+    projectsNext.addEventListener('click', () => scrollByCard(1));
+    const positionNavArrows = () => {
+      const visual = projectsScroll.querySelector('.project-visual');
+      const wrap = projectsScroll.closest('.projects-wrap');
+      if (!visual || !wrap) return;
+      const visualRect = visual.getBoundingClientRect();
+      const wrapRect = wrap.getBoundingClientRect();
+      const centerY = visualRect.top - wrapRect.top + visualRect.height / 2;
+      projectsPrev.style.top = `${centerY - 22}px`;
+      projectsNext.style.top = `${centerY - 22}px`;
+    };
+    const updateNavState = () => {
+      const max = projectsScroll.scrollWidth - projectsScroll.clientWidth - 4;
+      const atStart = projectsScroll.scrollLeft <= 4;
+      const atEnd = projectsScroll.scrollLeft >= max;
+      projectsPrev.style.opacity = atStart ? '0.35' : '1';
+      projectsPrev.style.pointerEvents = atStart ? 'none' : 'auto';
+      projectsNext.style.opacity = atEnd ? '0.35' : '1';
+      projectsNext.style.pointerEvents = atEnd ? 'none' : 'auto';
+      const fadeL = atStart ? '0px' : '28px';
+      const fadeR = atEnd ? '0px' : '28px';
+      const mask = `linear-gradient(90deg, transparent 0, #000 ${fadeL}, #000 calc(100% - ${fadeR}), transparent 100%)`;
+      projectsScroll.style.maskImage = mask;
+      projectsScroll.style.webkitMaskImage = mask;
+    };
+    projectsScroll.addEventListener('scroll', updateNavState, { passive: true });
+    window.addEventListener('resize', () => { updateNavState(); positionNavArrows(); });
+    updateNavState();
+    positionNavArrows();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(positionNavArrows);
+    }
+  }
 </script>
 
 </body>
