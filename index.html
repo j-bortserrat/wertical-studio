@@ -191,11 +191,14 @@
       position: absolute;
       top: 100%; left: 0; right: 0;
       flex-direction: column;
+      align-items: flex-start;
       background: var(--bg);
       padding: 30px 22px;
       gap: 20px;
       border-bottom: 1px solid var(--line);
     }
+    .nav-links.open a { color: var(--ink); }
+    .nav-links.open .nav-cta { border-color: var(--ink); color: var(--ink); }
   }
 
   /* ─── HERO ────────────────────────────── */
@@ -324,8 +327,11 @@
   }
   @media (max-width: 768px){
     .hero { height: 100svh; }
-    .hero-frame-content { bottom: 110px; padding-top: 90px; }
-    .hero-bottom { padding: 20px 24px 84px; }
+    .hero-frame-content { bottom: 96px; padding-top: 84px; }
+    .hero-frame-logo { font-size: 14px; margin-bottom: 12px; }
+    .hero-marker { font-size: 10px; margin-bottom: 14px; }
+    .hero-title { font-size: clamp(26px, 8vw, 40px); }
+    .hero-bottom { padding: 16px 24px 78px; }
     .scroll-hint { display: none; }
   }
 
@@ -1130,35 +1136,39 @@
     .nav-logo { font-size: 16px; }
 
     /* Sections */
-    .section { padding: 56px 20px; }
-    .section-label { font-size: 10px; margin-bottom: 16px; letter-spacing: 0.16em; }
+    .section { padding: 40px 20px; }
+    .section-label { font-size: 10px; margin-bottom: 12px; letter-spacing: 0.16em; }
     .section-label::before { font-size: 14px; }
-    .section-title { font-size: clamp(28px, 8vw, 40px); margin-bottom: 28px; line-height: 1.1; }
+    .section-title { font-size: clamp(24px, 7.5vw, 34px); margin-bottom: 18px; line-height: 1.1; }
 
     /* Section divider */
-    .section-opener { margin-bottom: 32px; }
-    .section-opener span { font-size: 16px; padding: 0 12px; }
+    .section-opener { margin-bottom: 24px; }
+    .section-opener span { font-size: 15px; padding: 0 12px; }
 
     /* Services */
-    .services-intro-text { font-size: 14px; }
+    .services { padding-top: 32px; padding-bottom: 28px; }
+    .services .section-title { margin-bottom: 10px; }
+    .services-intro-text { font-size: 13.5px; line-height: 1.5; }
+    .services-list { margin-top: 16px; }
     .service-item {
-      padding: 24px 0;
-      gap: 6px;
+      padding: 14px 0;
+      gap: 4px;
     }
-    .service-name { font-size: 22px; line-height: 1.1; }
-    .service-desc { font-size: 14px; line-height: 1.55; }
-    .service-num { font-size: 10px; letter-spacing: 0.14em; }
+    .service-name { font-size: 18px; line-height: 1.1; }
+    .service-desc { font-size: 13px; line-height: 1.45; }
+    .service-num { font-size: 9px; letter-spacing: 0.12em; }
     .service-item:hover { padding-left: 0; }
 
     /* Portfolio */
-    .portfolio-intro-text { font-size: 14px; margin-bottom: 28px; }
-    .projects { gap: 20px; }
-    .project { width: 88vw; }
-    .project-visual { margin-bottom: 18px; }
-    .project-title { font-size: clamp(24px, 6.5vw, 34px); line-height: 1.05; }
+    .portfolio .section-title { margin-bottom: 10px; }
+    .portfolio-intro-text { font-size: 13.5px; margin-bottom: 20px; line-height: 1.5; }
+    .projects { gap: 16px; padding-bottom: 24px; }
+    .project { width: 80vw; }
+    .project-visual { margin-bottom: 14px; }
+    .project-title { font-size: clamp(21px, 6vw, 30px); line-height: 1.05; }
     .project-num { font-size: 12px; margin-bottom: 10px; }
-    .project-desc { font-size: 14px; margin-bottom: 18px; line-height: 1.55; }
-    .project-tags { margin-bottom: 18px; gap: 6px; }
+    .project-desc { font-size: 13.5px; margin-bottom: 14px; line-height: 1.5; }
+    .project-tags { margin-bottom: 14px; gap: 6px; }
     .project-tag { padding: 4px 10px; font-size: 9px; letter-spacing: 0.12em; }
     .project-link, .project-link-soon { font-size: 11px; letter-spacing: 0.12em; }
 
