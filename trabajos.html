@@ -6,7 +6,7 @@
 <title>Trabajos · Wertical Studio</title>
 <meta name="description" content="Proyectos seleccionados de Wertical Studio — restauración, branding digital y desarrollo a medida en Valencia." />
 <link rel="canonical" href="https://werticalstudio.com/trabajos.html" />
-<meta name="theme-color" content="#fafaf7" />
+<meta name="theme-color" content="#ffffff" />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="apple-touch-icon" href="assets/favicon.svg" />
@@ -106,15 +106,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg: #fbeae6;
-    --bg-alt: #eeeeee;
-    --ink: #2d1b4e;
-    --ink-soft: #4a3a6b;
-    --ink-light: #564a72;
+    --bg: #ffffff;
+    --bg-alt: #f4f4f4;
+    --ink: #111111;
+    --ink-soft: #3d3d3d;
+    --ink-light: #6b6b6b;
     --coral: #ff6b6b;
     --coral-deep: #e94f4f;
-    --line: #e2dccc;
-    --grain: rgba(45, 27, 78, 0.025);
+    --line: #e6e6e6;
+    --grain: rgba(17, 17, 17, 0.025);
     --serif: 'Fraunces', Georgia, serif;
     --sans: 'Inter', system-ui, sans-serif;
     --max: 1240px;
@@ -160,7 +160,7 @@
     backdrop-filter: blur(0px);
   }
   .nav.scrolled {
-    background: rgba(251, 234, 230, 0.85);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
     padding: 14px 40px;
@@ -204,7 +204,8 @@
 
   /* PAGE HERO */
   .page-hero { padding: 180px 40px 80px; position: relative; overflow: hidden; }
-  .page-hero-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 2; }
+  .page-hero-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 2; text-align: center; }
+  .page-hero-lead { margin-left: auto; margin-right: auto; }
   .page-hero-marker {
     display: inline-flex; align-items: center; gap: 12px;
     font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
@@ -225,53 +226,29 @@
     position: absolute; top: 30%; right: -120px;
     width: 380px; height: 380px; border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, var(--coral), transparent 70%);
-    opacity: 0.12; filter: blur(40px); z-index: 1;
+    opacity: 0; filter: blur(40px); z-index: 1; display: none;
   }
 
   /* PROJECTS */
   .section { padding: 100px 40px; position: relative; z-index: 2; }
   .section-inner { max-width: var(--max); margin: 0 auto; }
 
-  .projects-wrap { position: relative; }
-  .projects {
-    display: flex; gap: 40px;
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
-    scroll-padding-left: 4px;
-    padding: 4px 4px 36px;
-    margin: 0 -4px -20px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--line) transparent;
-  }
-  .projects::-webkit-scrollbar { height: 5px; }
-  .projects::-webkit-scrollbar-thumb { background: var(--line); border-radius: 100px; }
-  .projects::-webkit-scrollbar-track { background: transparent; }
+  .projects { display: flex; flex-direction: column; gap: 120px; }
   .project {
-    display: flex; flex-direction: column;
-    flex: 0 0 auto;
-    width: min(480px, 80vw);
-    scroll-snap-align: start;
-    position: relative;
+    display: grid; grid-template-columns: 1.15fr 1fr;
+    gap: 80px; align-items: center; position: relative;
   }
+  .project:nth-child(even) .project-visual { order: 2; }
   .project-visual {
-    aspect-ratio: 4 / 3; border-radius: 26px; overflow: hidden;
+    aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden;
     position: relative;
-    margin-bottom: 32px;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 1px 2px rgba(45, 27, 78, 0.06), 0 8px 30px rgba(45, 27, 78, 0.08);
+    box-shadow: 0 1px 2px rgba(17, 17, 17, 0.06), 0 8px 30px rgba(17, 17, 17, 0.08);
   }
   .project:hover .project-visual {
-    transform: translateY(-8px);
-    box-shadow: 0 1px 2px rgba(45, 27, 78, 0.08), 0 30px 60px rgba(45, 27, 78, 0.18);
+    transform: translateY(-6px);
+    box-shadow: 0 1px 2px rgba(17, 17, 17, 0.08), 0 30px 60px rgba(17, 17, 17, 0.16);
   }
-  .project-visual::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 70%, rgba(45, 27, 78, 0.18));
-    z-index: 2; pointer-events: none; opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  .project:hover .project-visual::after { opacity: 1; }
   .project-visual img,
   .project-visual video {
     width: 100%; height: 100%; object-fit: cover;
@@ -279,20 +256,7 @@
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .project:hover .project-visual img,
-  .project:hover .project-visual video { transform: scale(1.04); }
-  .projects-nav {
-    position: absolute; top: calc(50% - 18px);
-    width: 44px; height: 44px; border-radius: 50%;
-    border: 1px solid var(--line); background: var(--bg); color: var(--ink);
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; z-index: 4; transition: all 0.25s;
-    box-shadow: 0 4px 16px rgba(45, 27, 78, 0.1);
-  }
-  .projects-nav:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .projects-nav svg { width: 18px; height: 18px; }
-  .projects-nav-prev { left: -22px; }
-  .projects-nav-next { right: -22px; }
-  @media (max-width: 880px){ .projects-nav { display: none; } }
+  .project:hover .project-visual video { transform: scale(1.03); }
   .project-num {
     font-family: var(--serif); font-style: italic;
     font-size: 16px; color: var(--coral);
@@ -345,7 +309,9 @@
   }
   .project-link-soon::before { content: "◐"; color: var(--coral); font-size: 16px; }
   @media (max-width: 880px){
-    .project { width: 84vw; }
+    .projects { gap: 64px; }
+    .project { grid-template-columns: 1fr; gap: 22px; }
+    .project:nth-child(even) .project-visual { order: 0; }
   }
 
   /* CTA */
@@ -463,16 +429,9 @@
 <!-- PROYECTOS -->
 <section class="section">
   <div class="section-inner">
-    <div class="projects-wrap">
-    <button class="projects-nav projects-nav-prev" id="projectsPrev" aria-label="Proyecto anterior">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 6 9 12 15 18"></polyline></svg>
-    </button>
-    <button class="projects-nav projects-nav-next" id="projectsNext" aria-label="Proyecto siguiente">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"></polyline></svg>
-    </button>
-    <div class="projects" id="projectsScroll">
+    <div class="projects">
 
-      <!-- 01 Bora Bora Açaí -->
+      <!-- Bora Bora Açaí -->
       <article class="project reveal">
         <a href="https://boraboracai.es" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Bora Bora Açaí">
           <video autoplay muted loop playsinline preload="none" poster="assets/portfolio/boraboracai.jpg" aria-label="Web de Bora Bora Açaí, açaí bowls y tostas en Valencia">
@@ -499,7 +458,7 @@
         </div>
       </article>
 
-      <!-- 02 Som Tribu -->
+      <!-- Som Tribu -->
       <article class="project reveal">
         <a href="https://somtribupaiporta.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Som Tribu">
           <video autoplay muted loop playsinline preload="none" poster="assets/portfolio/somtribupaiporta.jpg" aria-label="Web de Som Tribu, escuela de baile en Paiporta">
@@ -527,7 +486,7 @@
         </div>
       </article>
 
-      <!-- 03 Café del Mar -->
+      <!-- Café del Mar -->
       <article class="project reveal">
         <a href="https://cafedelmarcabanyal.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Café del Mar — Cabanyal">
           <img src="assets/portfolio/cafedelmarcabanyal.jpg" alt="Web de Café del Mar, cafetería en el Cabanyal (Valencia)" loading="lazy" width="1400" height="1050" />
@@ -553,7 +512,7 @@
         </div>
       </article>
 
-      <!-- 04 Arantxa -->
+      <!-- Arantxa -->
       <article class="project reveal">
         <a href="https://restaurantearantxa.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Restaurante Arantxa">
           <img src="assets/portfolio/restaurantearantxa.jpg" alt="Web de Restaurante Arantxa, en l'Eixample de Valencia" loading="lazy" width="1400" height="1050" />
@@ -578,7 +537,7 @@
         </div>
       </article>
 
-      <!-- 05 Restaurante Chino Alfafar -->
+      <!-- Restaurante Chino Alfafar -->
       <article class="project reveal">
         <a href="https://restaurantechinoalfafar.com" target="_blank" rel="noopener" class="project-visual" aria-label="Ver Restaurante Chino Alfafar">
           <img src="assets/portfolio/restaurantechinoalfafar.jpg" alt="Web de Restaurante Chino Alfafar, cocina china tradicional" loading="lazy" width="1400" height="1050" />
@@ -603,7 +562,6 @@
         </div>
       </article>
 
-    </div>
     </div>
   </div>
 </section>
@@ -669,52 +627,6 @@
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
   reveals.forEach(el => io.observe(el));
-
-  // Portfolio horizontal scroll nav
-  const projectsScroll = document.getElementById('projectsScroll');
-  const projectsPrev = document.getElementById('projectsPrev');
-  const projectsNext = document.getElementById('projectsNext');
-  if (projectsScroll && projectsPrev && projectsNext) {
-    const scrollByCard = (dir) => {
-      const card = projectsScroll.querySelector('.project');
-      const gap = 40;
-      const amount = card ? card.getBoundingClientRect().width + gap : 400;
-      projectsScroll.scrollBy({ left: dir * amount, behavior: 'smooth' });
-    };
-    projectsPrev.addEventListener('click', () => scrollByCard(-1));
-    projectsNext.addEventListener('click', () => scrollByCard(1));
-    const positionNavArrows = () => {
-      const visual = projectsScroll.querySelector('.project-visual');
-      const wrap = projectsScroll.closest('.projects-wrap');
-      if (!visual || !wrap) return;
-      const visualRect = visual.getBoundingClientRect();
-      const wrapRect = wrap.getBoundingClientRect();
-      const centerY = visualRect.top - wrapRect.top + visualRect.height / 2;
-      projectsPrev.style.top = `${centerY - 22}px`;
-      projectsNext.style.top = `${centerY - 22}px`;
-    };
-    const updateNavState = () => {
-      const max = projectsScroll.scrollWidth - projectsScroll.clientWidth - 4;
-      const atStart = projectsScroll.scrollLeft <= 4;
-      const atEnd = projectsScroll.scrollLeft >= max;
-      projectsPrev.style.opacity = atStart ? '0.35' : '1';
-      projectsPrev.style.pointerEvents = atStart ? 'none' : 'auto';
-      projectsNext.style.opacity = atEnd ? '0.35' : '1';
-      projectsNext.style.pointerEvents = atEnd ? 'none' : 'auto';
-      const fadeL = atStart ? '0px' : '28px';
-      const fadeR = atEnd ? '0px' : '28px';
-      const mask = `linear-gradient(90deg, transparent 0, #000 ${fadeL}, #000 calc(100% - ${fadeR}), transparent 100%)`;
-      projectsScroll.style.maskImage = mask;
-      projectsScroll.style.webkitMaskImage = mask;
-    };
-    projectsScroll.addEventListener('scroll', updateNavState, { passive: true });
-    window.addEventListener('resize', () => { updateNavState(); positionNavArrows(); });
-    updateNavState();
-    positionNavArrows();
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(positionNavArrows);
-    }
-  }
 </script>
 
 </body>

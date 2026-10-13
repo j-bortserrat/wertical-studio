@@ -6,7 +6,7 @@
 <title>Wertical Studio · Diseño y desarrollo web a medida en Valencia</title>
 <meta name="description" content="Diseño y desarrollo web a medida en Valencia. Creamos webs que elevan tu negocio: identidad, código propio y mantenimiento, con trato cercano y personal." />
 <link rel="canonical" href="https://werticalstudio.com/" />
-<meta name="theme-color" content="#fafaf7" />
+<meta name="theme-color" content="#ffffff" />
 <meta name="author" content="Wertical Studio" />
 
 <!-- Favicon -->
@@ -62,15 +62,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg: #fbeae6;
-    --bg-alt: #eeeeee;
-    --ink: #2d1b4e;
-    --ink-soft: #4a3a6b;
-    --ink-light: #564a72;
+    --bg: #ffffff;
+    --bg-alt: #f4f4f4;
+    --ink: #111111;
+    --ink-soft: #3d3d3d;
+    --ink-light: #6b6b6b;
     --coral: #ff6b6b;
     --coral-deep: #e94f4f;
-    --line: #e2dccc;
-    --grain: rgba(45, 27, 78, 0.025);
+    --line: #e6e6e6;
+    --grain: rgba(17, 17, 17, 0.025);
     --serif: 'Fraunces', Georgia, serif;
     --sans: 'Inter', system-ui, sans-serif;
     --max: 1240px;
@@ -98,7 +98,7 @@
       radial-gradient(circle at 25% 25%, var(--grain) 1px, transparent 1px),
       radial-gradient(circle at 75% 75%, var(--grain) 1px, transparent 1px);
     background-size: 3px 3px, 5px 5px;
-    opacity: 0.5;
+    opacity: 0;
     mix-blend-mode: multiply;
   }
   ::selection { background: var(--coral); color: white; }
@@ -123,7 +123,7 @@
     backdrop-filter: blur(0px);
   }
   .nav.scrolled {
-    background: rgba(251, 234, 230, 0.85);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
     padding: 14px 40px;
@@ -205,7 +205,7 @@
   .hero {
     height: 100vh;
     position: relative;
-    background: #0c0912;
+    background: #0a0a0a;
     overflow: hidden;
   }
   .hero-frame {
@@ -225,7 +225,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(10, 8, 16, 0.35) 0%, rgba(10, 8, 16, 0.75) 85%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.75) 85%);
     pointer-events: none;
   }
   .hero-frame-content {
@@ -353,15 +353,13 @@
     font-weight: 600;
     margin-bottom: 28px;
   }
-  .section-label::before {
-    content: attr(data-num);
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    color: var(--ink);
-    font-size: 16px;
-    letter-spacing: 0;
+  .section-head {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto 60px;
   }
+  .section-head .section-title { margin-left: auto; margin-right: auto; }
+  .section-head p { margin-left: auto !important; margin-right: auto !important; }
   .section-title {
     font-family: var(--serif);
     font-size: clamp(40px, 5vw, 72px);
@@ -556,7 +554,7 @@
     border-bottom: 1px solid var(--line);
     padding: 20px 0;
     display: grid;
-    grid-template-columns: 220px 1.1fr 1.4fr;
+    grid-template-columns: 1fr 1.4fr;
     gap: 50px;
     align-items: center;
     transition: padding 0.4s ease;
@@ -613,58 +611,35 @@
     line-height: 1.6;
     margin: 0 0 44px;
   }
-  .projects-wrap { position: relative; }
   .projects {
     display: flex;
-    gap: 44px;
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
-    scroll-padding-left: 4px;
-    padding: 4px 4px 36px;
-    margin: 0 -4px -20px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--line) transparent;
-  }
-  .projects::-webkit-scrollbar { height: 5px; }
-  .projects::-webkit-scrollbar-thumb { background: var(--line); border-radius: 100px; }
-  .projects::-webkit-scrollbar-track { background: transparent; }
-  .project {
-    display: flex;
     flex-direction: column;
-    flex: 0 0 auto;
-    width: min(580px, 58vw);
-    scroll-snap-align: start;
+    gap: 120px;
+  }
+  .project {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 80px;
+    align-items: center;
     position: relative;
   }
+  .project:nth-child(even) .project-visual { order: 2; }
   .project-visual {
     aspect-ratio: 4 / 3;
-    border-radius: 26px;
+    border-radius: 14px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 32px;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow:
-      0 1px 2px rgba(45, 27, 78, 0.06),
-      0 8px 30px rgba(45, 27, 78, 0.08);
+      0 1px 2px rgba(17, 17, 17, 0.06),
+      0 8px 30px rgba(17, 17, 17, 0.08);
   }
   .project:hover .project-visual {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     box-shadow:
-      0 1px 2px rgba(45, 27, 78, 0.08),
-      0 30px 60px rgba(45, 27, 78, 0.18);
+      0 1px 2px rgba(17, 17, 17, 0.08),
+      0 30px 60px rgba(17, 17, 17, 0.16);
   }
-  .project-visual::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 70%, rgba(45, 27, 78, 0.18));
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  .project:hover .project-visual::after { opacity: 1; }
   .project-visual img,
   .project-visual video {
     width: 100%;
@@ -676,31 +651,12 @@
   }
   .project:hover .project-visual img,
   .project:hover .project-visual video {
-    transform: scale(1.04);
+    transform: scale(1.03);
   }
-  .projects-nav {
-    position: absolute;
-    top: calc(50% - 18px);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    background: var(--bg);
-    color: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 4;
-    transition: all 0.25s;
-    box-shadow: 0 4px 16px rgba(45, 27, 78, 0.1);
-  }
-  .projects-nav:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .projects-nav svg { width: 18px; height: 18px; }
-  .projects-nav-prev { left: -22px; }
-  .projects-nav-next { right: -22px; }
   @media (max-width: 880px){
-    .projects-nav { display: none; }
+    .projects { gap: 70px; }
+    .project { grid-template-columns: 1fr; gap: 28px; }
+    .project:nth-child(even) .project-visual { order: 0; }
   }
 
   .project-num {
@@ -801,9 +757,6 @@
   .project-link:hover svg {
     transform: translate(4px, -4px);
   }
-  @media (max-width: 880px){
-    .project { width: 84vw; }
-  }
 
   /* ─── PROCESO ─────────────────────────── */
   .process {
@@ -846,7 +799,7 @@
   .process-step-desc {
     font-size: 14px;
     line-height: 1.6;
-    color: rgba(250, 250, 247, 0.65);
+    color: rgba(255, 255, 255, 0.65);
   }
   .process-bg-text {
     position: absolute;
@@ -906,13 +859,11 @@
   .contact-inner {
     max-width: var(--max);
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 100px;
-    align-items: start;
     position: relative;
     z-index: 2;
   }
+  .contact-main { text-align: center; }
+  .contact-main .contact-lead { margin-left: auto; margin-right: auto; }
   .contact-title {
     font-family: var(--serif);
     font-size: clamp(44px, 6vw, 88px);
@@ -957,10 +908,13 @@
   .contact-cta:hover svg { transform: translateX(4px); }
 
   .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 90px;
+    padding-top: 50px;
+    border-top: 1px solid var(--line);
+    text-align: center;
   }
   .contact-block-label {
     font-size: 11px;
@@ -979,6 +933,7 @@
   }
   a.contact-block-value:hover { color: var(--coral); }
   .contact-decoration {
+    display: none;
     position: absolute;
     right: -200px; top: 40%;
     width: 500px; height: 500px;
@@ -989,7 +944,7 @@
   }
   @media (max-width: 880px){
     .contact { padding: 90px 22px; }
-    .contact-inner { grid-template-columns: 1fr; gap: 50px; }
+    .contact-info { grid-template-columns: 1fr; gap: 30px; margin-top: 50px; padding-top: 36px; }
   }
 
   /* ─── FOOTER ──────────────────────────── */
@@ -1138,7 +1093,6 @@
     /* Sections */
     .section { padding: 40px 20px; }
     .section-label { font-size: 10px; margin-bottom: 12px; letter-spacing: 0.16em; }
-    .section-label::before { font-size: 14px; }
     .section-title { font-size: clamp(24px, 7.5vw, 34px); margin-bottom: 18px; line-height: 1.1; }
 
     /* Section divider */
@@ -1156,15 +1110,13 @@
     }
     .service-name { font-size: 18px; line-height: 1.1; }
     .service-desc { font-size: 13px; line-height: 1.45; }
-    .service-num { font-size: 9px; letter-spacing: 0.12em; }
     .service-item:hover { padding-left: 0; }
 
     /* Portfolio */
     .portfolio .section-title { margin-bottom: 10px; }
     .portfolio-intro-text { font-size: 13.5px; margin-bottom: 20px; line-height: 1.5; }
-    .projects { gap: 16px; padding-bottom: 24px; }
-    .project { width: 80vw; }
-    .project-visual { margin-bottom: 14px; }
+    .projects { gap: 56px; }
+    .project { gap: 18px; }
     .project-title { font-size: clamp(21px, 6vw, 30px); line-height: 1.05; }
     .project-num { font-size: 12px; margin-bottom: 10px; }
     .project-desc { font-size: 13.5px; margin-bottom: 14px; line-height: 1.5; }
@@ -1174,11 +1126,10 @@
 
     /* Contact */
     .contact { padding: 56px 20px; }
-    .contact-inner { gap: 28px; }
     .contact-title { font-size: clamp(32px, 9vw, 50px); margin-bottom: 22px; line-height: 1.02; }
     .contact-lead { font-size: 15px; margin-bottom: 26px; line-height: 1.55; }
     .contact-cta { padding: 16px 28px; font-size: 12px; }
-    .contact-info { gap: 22px; padding-top: 6px; }
+    .contact-info { gap: 22px; margin-top: 36px; padding-top: 28px; }
     .contact-block-label { font-size: 10px; }
     .contact-block-value { font-size: 17px; }
 
@@ -1286,34 +1237,33 @@
 <section class="section services" id="servicios">
   <div class="section-opener" aria-hidden="true"><span>·</span></div>
   <div class="section-inner">
-    <div class="section-label reveal" data-num="01">— Lo que hacemos</div>
-    <h2 class="section-title reveal">
-      Cuatro disciplinas,<br />
-      una sola <em>obsesión</em>.
-    </h2>
-    <p class="services-intro-text reveal">
-      Cada negocio tiene una historia — nosotros la llevamos online. Transformamos
-      ideas en páginas web a medida que hacen crecer tu negocio, con un trato
-      cercano y personal. Cuéntanos la tuya.
-    </p>
+    <div class="section-head">
+      <div class="section-label reveal">Lo que hacemos</div>
+      <h2 class="section-title reveal">
+        Cuatro disciplinas,<br />
+        una sola <em>obsesión</em>.
+      </h2>
+      <p class="services-intro-text reveal">
+        Cada negocio tiene una historia — nosotros la llevamos online. Transformamos
+        ideas en páginas web a medida que hacen crecer tu negocio, con un trato
+        cercano y personal. Cuéntanos la tuya.
+      </p>
+    </div>
 
     <div class="services-list">
       <div class="service-item reveal">
-        <div class="service-num">01 — Diseño</div>
         <h3 class="service-name">Diseño a medida</h3>
         <div class="service-desc">
           Identidad visual y experiencia de usuario adaptadas a tu sector y tipo de cliente.
         </div>
       </div>
       <div class="service-item reveal">
-        <div class="service-num">02 — Desarrollo</div>
         <h3 class="service-name">Desarrollo propio</h3>
         <div class="service-desc">
           Código limpio, rápido y responsive. Optimizado para móvil, SEO y rendimiento real.
         </div>
       </div>
       <div class="service-item reveal">
-        <div class="service-num">03 — Mantenimiento</div>
         <h3 class="service-name">Mantenimiento</h3>
         <div class="service-desc">
           Publicación, gestión y renovación del dominio. Cambios de contenido,
@@ -1322,7 +1272,6 @@
         </div>
       </div>
       <div class="service-item reveal">
-        <div class="service-num">04 — Consultoría</div>
         <h3 class="service-name">Consultoría digital</h3>
         <div class="service-desc">
           Asesoramos en presencia online, SEO, conversión y estrategia para que tu web rinda más.
@@ -1336,24 +1285,18 @@
 <section class="section portfolio" id="trabajos">
   <div class="section-opener" aria-hidden="true"><span>·</span></div>
   <div class="section-inner">
-    <div class="section-label reveal" data-num="02">— Proyectos</div>
-    <h2 class="section-title reveal">
-      Cada negocio tiene su historia,<br />
-      nosotros la llevamos <em>online</em>.
-    </h2>
-    <p class="portfolio-intro-text reveal">
-      Transformamos ideas en páginas web a medida que hacen crecer tu negocio, con un
-      trato cercano y personal.
-    </p>
-
-    <div class="projects-wrap">
-    <button class="projects-nav projects-nav-prev" id="projectsPrev" aria-label="Proyecto anterior">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 6 9 12 15 18"></polyline></svg>
-    </button>
-    <button class="projects-nav projects-nav-next" id="projectsNext" aria-label="Proyecto siguiente">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"></polyline></svg>
-    </button>
-    <div class="projects" id="projectsScroll">
+    <div class="section-head">
+      <div class="section-label reveal">Proyectos</div>
+      <h2 class="section-title reveal">
+        Cada negocio tiene su historia,<br />
+        nosotros la llevamos <em>online</em>.
+      </h2>
+      <p class="portfolio-intro-text reveal">
+        Transformamos ideas en páginas web a medida que hacen crecer tu negocio, con un
+        trato cercano y personal.
+      </p>
+    </div>
+    <div class="projects">
 
       <!-- Project 01: Bora Bora Açaí -->
       <article class="project reveal">
@@ -1485,7 +1428,6 @@
       </article>
 
     </div>
-    </div>
   </div>
 </section>
 
@@ -1494,8 +1436,8 @@
   <div class="contact-decoration"></div>
   <div class="section-opener" aria-hidden="true" style="margin-bottom:50px;"><span>·</span></div>
   <div class="contact-inner">
-    <div>
-      <div class="section-label reveal" data-num="03">— Contacto</div>
+    <div class="contact-main">
+      <div class="section-label reveal">Contacto</div>
       <h2 class="contact-title reveal">
         Hacemos visible<br />
         lo que hace <em>único</em><br />
@@ -1630,52 +1572,6 @@
       parallaxTick = true;
     }
   }, { passive: true });
-
-  // Portfolio horizontal scroll nav
-  const projectsScroll = document.getElementById('projectsScroll');
-  const projectsPrev = document.getElementById('projectsPrev');
-  const projectsNext = document.getElementById('projectsNext');
-  if (projectsScroll && projectsPrev && projectsNext) {
-    const scrollByCard = (dir) => {
-      const card = projectsScroll.querySelector('.project');
-      const gap = 44;
-      const amount = card ? card.getBoundingClientRect().width + gap : 400;
-      projectsScroll.scrollBy({ left: dir * amount, behavior: 'smooth' });
-    };
-    projectsPrev.addEventListener('click', () => scrollByCard(-1));
-    projectsNext.addEventListener('click', () => scrollByCard(1));
-    const positionNavArrows = () => {
-      const visual = projectsScroll.querySelector('.project-visual');
-      const wrap = projectsScroll.closest('.projects-wrap');
-      if (!visual || !wrap) return;
-      const visualRect = visual.getBoundingClientRect();
-      const wrapRect = wrap.getBoundingClientRect();
-      const centerY = visualRect.top - wrapRect.top + visualRect.height / 2;
-      projectsPrev.style.top = `${centerY - 22}px`;
-      projectsNext.style.top = `${centerY - 22}px`;
-    };
-    const updateNavState = () => {
-      const max = projectsScroll.scrollWidth - projectsScroll.clientWidth - 4;
-      const atStart = projectsScroll.scrollLeft <= 4;
-      const atEnd = projectsScroll.scrollLeft >= max;
-      projectsPrev.style.opacity = atStart ? '0.35' : '1';
-      projectsPrev.style.pointerEvents = atStart ? 'none' : 'auto';
-      projectsNext.style.opacity = atEnd ? '0.35' : '1';
-      projectsNext.style.pointerEvents = atEnd ? 'none' : 'auto';
-      const fadeL = atStart ? '0px' : '28px';
-      const fadeR = atEnd ? '0px' : '28px';
-      const mask = `linear-gradient(90deg, transparent 0, #000 ${fadeL}, #000 calc(100% - ${fadeR}), transparent 100%)`;
-      projectsScroll.style.maskImage = mask;
-      projectsScroll.style.webkitMaskImage = mask;
-    };
-    projectsScroll.addEventListener('scroll', updateNavState, { passive: true });
-    window.addEventListener('resize', () => { updateNavState(); positionNavArrows(); });
-    updateNavState();
-    positionNavArrows();
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(positionNavArrows);
-    }
-  }
 </script>
 
 </body>

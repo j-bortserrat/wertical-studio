@@ -6,7 +6,7 @@
 <title>Servicios · Wertical Studio</title>
 <meta name="description" content="Diseño web a medida, desarrollo propio, mantenimiento y consultoría digital. Wertical Studio, Valencia." />
 <link rel="canonical" href="https://werticalstudio.com/servicios.html" />
-<meta name="theme-color" content="#fafaf7" />
+<meta name="theme-color" content="#ffffff" />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="apple-touch-icon" href="assets/favicon.svg" />
@@ -63,15 +63,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg: #fafaf7;
-    --bg-alt: #f1efe8;
-    --ink: #2d1b4e;
-    --ink-soft: #4a3a6b;
-    --ink-light: #564a72;
+    --bg: #ffffff;
+    --bg-alt: #f4f4f4;
+    --ink: #111111;
+    --ink-soft: #3d3d3d;
+    --ink-light: #6b6b6b;
     --coral: #ff6b6b;
     --coral-deep: #e94f4f;
-    --line: #e2dccc;
-    --grain: rgba(45, 27, 78, 0.025);
+    --line: #e6e6e6;
+    --grain: rgba(17, 17, 17, 0.025);
     --serif: 'Fraunces', Georgia, serif;
     --sans: 'Inter', system-ui, sans-serif;
     --max: 1240px;
@@ -117,7 +117,7 @@
     backdrop-filter: blur(0px);
   }
   .nav.scrolled {
-    background: rgba(250, 250, 247, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
     padding: 14px 40px;
@@ -168,6 +168,7 @@
   .page-hero-inner {
     max-width: var(--max); margin: 0 auto;
     position: relative; z-index: 2;
+    text-align: center;
   }
   .page-hero-marker {
     display: inline-flex; align-items: center; gap: 12px;
@@ -188,13 +189,13 @@
   .page-hero-lead {
     font-size: clamp(17px, 1.4vw, 21px);
     line-height: 1.6; color: var(--ink-soft);
-    max-width: 720px;
+    max-width: 720px; margin-left: auto; margin-right: auto;
   }
   .page-hero-decoration {
     position: absolute; top: 30%; right: -120px;
     width: 380px; height: 380px; border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, var(--coral), transparent 70%);
-    opacity: 0.12; filter: blur(40px); z-index: 1;
+    opacity: 0; filter: blur(40px); z-index: 1; display: none;
   }
 
   /* SECTION */
@@ -206,11 +207,7 @@
     font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--coral); font-weight: 600; margin-bottom: 28px;
   }
-  .section-label::before {
-    content: attr(data-num); font-family: var(--serif);
-    font-style: italic; font-weight: 400; color: var(--ink);
-    font-size: 16px; letter-spacing: 0;
-  }
+
   .section-title {
     font-family: var(--serif);
     font-size: clamp(36px, 5vw, 64px);
@@ -291,7 +288,7 @@
   .kit-banner-title em { font-style: italic; color: var(--coral); }
   .kit-banner-text {
     font-size: 16px; line-height: 1.65;
-    color: rgba(250, 250, 247, 0.75); margin: 0;
+    color: rgba(255, 255, 255, 0.75); margin: 0;
   }
   .kit-banner-cta {
     display: inline-flex; align-items: center; gap: 12px;
@@ -434,7 +431,7 @@
   <div class="section-inner">
 
     <div class="service-block reveal">
-      <div class="service-block-num">01 — Diseño <strong>UI / UX</strong></div>
+      <div class="service-block-num">Diseño <strong>UI / UX</strong></div>
       <div>
         <h2 class="service-block-name">Diseño a medida</h2>
         <p class="service-block-desc">
@@ -454,7 +451,7 @@
     </div>
 
     <div class="service-block reveal">
-      <div class="service-block-num">02 — Desarrollo <strong>web</strong></div>
+      <div class="service-block-num">Desarrollo <strong>web</strong></div>
       <div>
         <h2 class="service-block-name">Desarrollo propio</h2>
         <p class="service-block-desc">
@@ -474,7 +471,7 @@
     </div>
 
     <div class="service-block reveal">
-      <div class="service-block-num">03 — Mantenimiento <strong>continuo</strong></div>
+      <div class="service-block-num">Mantenimiento <strong>continuo</strong></div>
       <div>
         <h2 class="service-block-name">Mantenimiento</h2>
         <p class="service-block-desc">
@@ -494,7 +491,7 @@
     </div>
 
     <div class="service-block reveal">
-      <div class="service-block-num">04 — Consultoría <strong>digital</strong></div>
+      <div class="service-block-num">Consultoría <strong>digital</strong></div>
       <div>
         <h2 class="service-block-name">Consultoría digital</h2>
         <p class="service-block-desc">
