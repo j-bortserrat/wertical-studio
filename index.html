@@ -602,7 +602,20 @@
   }
 
   /* ─── PORTFOLIO ───────────────────────── */
-  .portfolio { padding-bottom: 80px; }
+  .portfolio { padding-bottom: 120px; background: #111111; color: #ffffff; }
+  .portfolio .section-opener::before { background: rgba(255, 255, 255, 0.12); }
+  .portfolio .section-opener span { background: #111111; }
+  .portfolio .portfolio-intro-text,
+  .portfolio .project-desc { color: rgba(255, 255, 255, 0.68); }
+  .portfolio .project-tag { color: rgba(255, 255, 255, 0.7); border-color: rgba(255, 255, 255, 0.2); }
+  .portfolio .project-tag-status { color: #4ade80; border-color: rgba(74, 222, 128, 0.4); background: rgba(74, 222, 128, 0.08); }
+  .portfolio .project-link { color: #ffffff; border-color: #ffffff; }
+  .portfolio .project-visual {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  .portfolio .project:hover .project-visual {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 30px 70px rgba(0, 0, 0, 0.6);
+  }
   .portfolio .section-title { margin-bottom: 14px; }
   .portfolio-intro-text {
     max-width: 560px;
